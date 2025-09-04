@@ -1,3 +1,13 @@
+/* Tło przycisku Wyślij */
+.btn-success[type="submit"] {
+  background-color: #659798 !important;
+  border-color: #659798 !important;
+  color: #fff !important;
+}
+/* Tło całej stopki */
+#footer3-0, .cid-uUpg30vRk9 {
+  background-color: #659798 !important;
+}
 .card-wrap img {
   border-radius: 16px;
 }
@@ -9,9 +19,9 @@
 /* Kolor tła przycisków taki jak tło logo */
 .btn-success,
 .navbar-buttons .btn-success {
-  background-color: #f5f5f5;
-  border-color: #f5f5f5;
-  color: #232323;
+  background-color: #659798 !important;
+  border-color: #659798 !important;
+  color: #fff !important;
 }
 /* Rozmycie krawędzi dla logo */
 .logo-blur-edges {
