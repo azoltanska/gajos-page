@@ -29,28 +29,40 @@
 <body>
   
     <section data-bs-version="5.1" class="menu menu2 cid-sFCw1qGFAI" once="menu" id="menu2-23">
-        <!-- Cookie Consent Banner RODO -->
-    <div id="cookie-banner" style="position:fixed;bottom:0;left:0;width:100%;background:#659798;color:#fff;padding:24px 0;z-index:9999;display:none;box-shadow:0 -2px 8px rgba(0,0,0,0.1);font-size:1rem;">
-            <div style="max-width:900px;margin:0 auto;display:flex;flex-direction:column;gap:16px;">
-                <div style="margin-bottom:8px;">
-                    <strong>Używamy plików cookies w celu zapewnienia prawidłowego działania strony, analizy ruchu oraz personalizacji treści.</strong> Możesz zaakceptować wszystkie lub dostosować ustawienia. <a href="#cookie-policy" id="cookie-policy-link" style="color:#fff;text-decoration:underline;">Polityka cookies</a>
+        <!-- Cookie Consent Banner stylizowany jak odo24.pl -->
+        <div id="cookie-banner" style="position:fixed;bottom:24px;left:0;width:100vw;z-index:9999;display:none;">
+            <div style="max-width:900px;margin:0 auto;background:#fff;color:#222;box-shadow:0 2px 16px rgba(0,0,0,0.15);border-radius:12px;padding:20px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;">
+                <div style="flex:1;min-width:220px;font-size:1.05em;line-height:1.5;">
+                    Ta strona używa plików cookies w celach statystycznych i funkcjonalnych. Szczegóły znajdziesz w <a href="#cookie-policy" id="cookie-policy-link" style="color:#2299aa;text-decoration:underline;">Polityce cookies</a>.
                 </div>
-                <form id="cookie-form" style="display:flex;flex-direction:column;gap:8px;">
-                    <label style="display:flex;align-items:center;gap:8px;">
-                        <input type="checkbox" name="necessary" checked disabled style="accent-color:#2299aa;"> Niezbędne (wymagane do działania strony)
+                <div style="display:flex;gap:12px;flex-wrap:wrap;">
+                    <button id="cookie-accept" style="background:#222;color:#fff;border:none;padding:10px 28px;border-radius:6px;font-weight:600;cursor:pointer;">Akceptuję</button>
+                    <button id="cookie-customize-open" style="background:#fff;color:#222;border:2px solid #222;padding:10px 28px;border-radius:6px;font-weight:600;cursor:pointer;">Dostosuj</button>
+                </div>
+            </div>
+        </div>
+        <!-- Okno ustawień cookies -->
+        <div id="cookie-settings" style="display:none;position:fixed;bottom:24px;left:0;width:100vw;z-index:10000;">
+            <div style="max-width:900px;margin:0 auto;background:#fff;color:#222;box-shadow:0 2px 16px rgba(0,0,0,0.15);border-radius:12px;padding:24px 32px;display:flex;flex-direction:column;gap:18px;">
+                <div style="font-size:1.15em;font-weight:600;">Dostosuj cookies</div>
+                <form id="cookie-settings-form" style="display:flex;flex-direction:column;gap:12px;">
+                    <label style="display:flex;align-items:center;gap:10px;font-size:1em;">
+                        <input type="checkbox" name="necessary" checked disabled style="accent-color:#2299aa;width:20px;height:20px;"> Niezbędne (wymagane do działania strony)
                     </label>
-                    <label style="display:flex;align-items:center;gap:8px;">
-                        <input type="checkbox" name="analytics" style="accent-color:#2299aa;"> Analityczne (Google Analytics)
+                    <label style="display:flex;align-items:center;gap:10px;font-size:1em;">
+                        <input type="checkbox" name="analytics" style="accent-color:#2299aa;width:20px;height:20px;"> Analityczne (statystyki)
                     </label>
-                    <label style="display:flex;align-items:center;gap:8px;">
-                        <input type="checkbox" name="marketing" style="accent-color:#2299aa;"> Marketingowe (np. Facebook, remarketing)
+                    <label style="display:flex;align-items:center;gap:10px;font-size:1em;">
+                        <input type="checkbox" name="marketing" style="accent-color:#2299aa;width:20px;height:20px;"> Marketingowe
                     </label>
-                    <div style="display:flex;gap:12px;margin-top:12px;">
-                        <button type="button" id="cookie-accept-all" style="background:#fff;color:#659798;border:none;padding:8px 20px;border-radius:4px;cursor:pointer;font-weight:600;">Akceptuję wszystkie</button>
-                        <button type="button" id="cookie-reject-all" style="background:#fff;color:#659798;border:none;padding:8px 20px;border-radius:4px;cursor:pointer;font-weight:600;">Odrzuć wszystkie poza niezbędnymi</button>
-                        <button type="button" id="cookie-save" style="background:#fff;color:#659798;border:none;padding:8px 20px;border-radius:4px;cursor:pointer;font-weight:600;">Zapisz ustawienia</button>
-                    </div>
                 </form>
+                <div style="display:flex;gap:12px;justify-content:space-between;align-items:center;flex-wrap:wrap;">
+                    <button id="cookie-select-all" style="background:#eee;color:#222;border:1px solid #2299aa;padding:8px 18px;border-radius:6px;font-weight:600;cursor:pointer;">Zaznacz wszystko</button>
+                    <div style="display:flex;gap:12px;">
+                        <button id="cookie-settings-save" style="background:#2299aa;color:#fff;border:none;padding:10px 28px;border-radius:6px;font-weight:600;cursor:pointer;">Zapisz wybór</button>
+                        <button id="cookie-settings-cancel" style="background:#fff;color:#222;border:2px solid #222;padding:10px 28px;border-radius:6px;font-weight:600;cursor:pointer;">Anuluj</button>
+                    </div>
+                </div>
             </div>
         </div>
     
@@ -334,7 +346,7 @@
         <div class="media-container-row align-center mbr-white">
             <div class="row row-copirayt">
                 <p class="mbr-text mb-0 mbr-fonts-style mbr-white align-center display-7">
-                    © Copyright 2025 GS Gajos Nienartowicz - all rights reserved&nbsp;</p>
+                    © Copyright 2025 GS Gajos Nienartowicz &nbsp;</p>
             </div>
             <div style="margin-top:12px;">
                 <a href="#cookie-policy" id="footer-cookie-policy" style="color:#fff;text-decoration:underline;">Polityka cookies</a> |
@@ -343,19 +355,140 @@
         </div>
     </div>
 <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/ytplayer/index.js"></script>  <script src="assets/dropdown/js/navbar-dropdown.js"></script>  <script src="assets/theme/js/script.js"></script>  <script src="assets/formoid/formoid.min.js"></script>  
+<script>
+// Cookie consent logic stylizowany jak odo24.pl
+function setCookie(name, value, days) {
+    var expires = "";
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days*24*60*60*1000));
+        expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+}
+function getCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+function saveConsent(consent) {
+    setCookie('cookieConsent', JSON.stringify(consent), 365);
+}
+function loadConsent() {
+    var c = getCookie('cookieConsent');
+    if (!c) return null;
+    try { return JSON.parse(c); } catch(e) { return null; }
+}
+function applyConsent(consent) {
+    // Możesz tu dodać ładowanie skryptów analitycznych/marketingowych
+}
+function showBanner() {
+    document.getElementById('cookie-banner').style.display = 'block';
+}
+function hideBanner() {
+    document.getElementById('cookie-banner').style.display = 'none';
+}
+function showSettings() {
+    document.getElementById('cookie-settings').style.display = 'block';
+}
+function hideSettings() {
+    document.getElementById('cookie-settings').style.display = 'none';
+}
+window.addEventListener('DOMContentLoaded', function() {
+    var consent = loadConsent();
+    if (!consent) {
+        showBanner();
+    } else {
+        applyConsent(consent);
+    }
+    // Baner główny
+    document.getElementById('cookie-accept').onclick = function() {
+        var consent = {necessary:true,analytics:true,marketing:true};
+        saveConsent(consent);
+        applyConsent(consent);
+        hideBanner();
+    };
+    var customizeBtn = document.getElementById('cookie-customize-open');
+    if (customizeBtn) {
+        customizeBtn.onclick = function() {
+            hideBanner();
+            showSettings();
+        };
+    }
+    // Zaznacz wszystko
+    document.getElementById('cookie-select-all').onclick = function() {
+        var form = document.getElementById('cookie-settings-form');
+        if(form.analytics) form.analytics.checked = true;
+        if(form.marketing) form.marketing.checked = true;
+    };
+    // Okno ustawień
+    document.getElementById('cookie-settings-cancel').onclick = function() {
+        hideSettings();
+        showBanner();
+    };
+    document.getElementById('cookie-settings-save').onclick = function() {
+        var form = document.getElementById('cookie-settings-form');
+        var consent = {
+            necessary: true,
+            analytics: form.analytics.checked,
+            marketing: form.marketing.checked
+        };
+        saveConsent(consent);
+        applyConsent(consent);
+        hideSettings();
+    };
+    // Polityka cookies link
+    // Link do polityki cookies
+    var policyLinks = document.querySelectorAll('#cookie-policy-link, #footer-cookie-policy');
+    policyLinks.forEach(function(link) {
+        link.onclick = function(e) {
+            e.preventDefault();
+            var policy = document.getElementById('cookie-policy');
+            if(policy) policy.style.display = 'block';
+        };
+    });
+    var closePolicy = document.getElementById('close-cookie-policy');
+    if(closePolicy) closePolicy.onclick = function() {
+        var policy = document.getElementById('cookie-policy');
+        if(policy) policy.style.display = 'none';
+    };
+    // Link 'Zmień ustawienia cookies' w stopce
+    var changeSettingsBtn = document.getElementById('cookie-settings-btn');
+    if (changeSettingsBtn) {
+        changeSettingsBtn.onclick = function(e) {
+            e.preventDefault();
+            hideBanner();
+            showSettings();
+        };
+    }
+});
+</script>
 </body>
 <div id="cookie-policy" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.7);z-index:10000;overflow:auto;">
-  <div style="background:#fff;color:#222;max-width:600px;margin:40px auto;padding:32px;border-radius:8px;box-shadow:0 2px 16px rgba(0,0,0,0.2);position:relative;">
-    <h2>Polityka cookies</h2>
-    <p><strong>Typy cookies:</strong><br>
-    - Niezbędne: wymagane do działania strony.<br>
-    - Analityczne: np. Google Analytics, pomagają analizować ruch.<br>
-    - Marketingowe: np. Facebook, remarketing, personalizacja reklam.<br>
-    <br><strong>Czas przechowywania:</strong> Cookies mogą być przechowywane przez okres do 12 miesięcy lub do usunięcia przez użytkownika.<br>
-    <br><strong>Podmioty trzecie:</strong> Google, Meta (Facebook) – szczegóły w ich politykach prywatności.<br>
-    <br><strong>Zmiana zgody:</strong> Możesz w każdej chwili zmienić ustawienia cookies za pomocą przycisku „Zmień ustawienia cookies” w stopce.<br>
-    <br><strong>Więcej informacji:</strong> W razie pytań skontaktuj się z administratorem strony.
-    <button id="close-cookie-policy" style="position:absolute;top:12px;right:12px;background:#2299aa;color:#fff;border:none;padding:6px 12px;border-radius:4px;cursor:pointer;">Zamknij</button>
+            <div style="background:#fff;color:#1a2a33;max-width:650px;width:98vw;margin:60px auto 0 auto;padding:32px 36px 24px 36px;border-radius:20px;box-shadow:0 8px 32px rgba(0,0,0,0.18);position:relative;display:flex;flex-direction:column;gap:18px;font-size:1.08em;line-height:1.7;">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
+            <span style="display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;background:#2299aa22;border-radius:50%;color:#2299aa;font-size:1.6em;">
+                <svg width="22" height="22" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="#2299aa" stroke-width="2" fill="#fff"/><path d="M8 12.5l2.5 2.5 5-5" stroke="#2299aa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <h2 style="font-size:1.35em;font-weight:700;margin:0;color:#2299aa;letter-spacing:0.01em;">Polityka cookies</h2>
+        </div>
+        <p style="margin-bottom:0.7em;"><strong>Typy cookies:</strong><br><br> 
+        <span style="display:inline-block;margin-left:1em;"><b>Niezbędne</b> – wymagane do działania strony.</span><br>
+        <span style="display:inline-block;margin-left:1em;"><b>Analityczne</b> – np. Google Analytics, pomagają analizować ruch.</span><br>
+        <span style="display:inline-block;margin-left:1em;"><b>Marketingowe</b> – np. Facebook, remarketing, personalizacja reklam.</span>
+        </p>
+        <p style="margin-bottom:0.7em;"><strong>Czas przechowywania:</strong> Cookies mogą być przechowywane przez okres do 12 miesięcy lub do usunięcia przez użytkownika.</p>
+        <p style="margin-bottom:0.7em;"><strong>Podmioty trzecie:</strong> Google, Meta (Facebook) – szczegóły w ich politykach prywatności.</p>
+        <p style="margin-bottom:0.7em;"><strong>Zmiana zgody:</strong> Możesz w każdej chwili zmienić ustawienia cookies za pomocą przycisku <b>„Zmień ustawienia cookies”</b> w stopce.</p>
+        <p style="margin-bottom:0.7em;"><strong>Więcej informacji:</strong> W razie pytań skontaktuj się z administratorem strony.</p>
+        <div style="width:100%;display:flex;justify-content:flex-end;margin-top:12px;">
+            <button id="close-cookie-policy" style="background:#2299aa;color:#fff;border:none;padding:10px 28px;border-radius:8px;cursor:pointer;font-weight:600;font-size:1em;box-shadow:0 2px 8px rgba(34,153,170,0.08);transition:background 0.2s;outline:none;">Zamknij</button>
+        </div>
   </div>
 </div>
 <script>
@@ -430,7 +563,7 @@ function hidePolicy() {
     document.getElementById('cookie-policy').style.display = 'none';
 }
 function showSettings() {
-    showBanner();
+    document.getElementById('cookie-settings').style.display = 'block';
 }
 window.addEventListener('DOMContentLoaded', function() {
     var consent = loadConsent();
