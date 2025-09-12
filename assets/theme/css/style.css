@@ -1,3 +1,7 @@
+/* Tło pod ikonami SVG w ofercie */
+.offer-icon-bg {
+  background-color: #659798 !important;
+}
 /* Tło przycisku Wyślij */
 .btn-success[type="submit"] {
   background-color: #659798 !important;
