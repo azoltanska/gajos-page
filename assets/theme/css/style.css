@@ -1,3 +1,14 @@
+/* Ikony oferty: czarne na jasnym tle, białe na ciemnym */
+.offer-svg {
+  filter: invert(0%);
+  transition: filter 0.2s;
+}
+.bg-dark .offer-svg,
+section[style*="background:#222"],
+section[style*="background: #222"],
+section.bg-dark .offer-svg {
+  filter: invert(100%);
+}
 /* Tło pod ikonami SVG w ofercie */
 .offer-icon-bg {
   background-color: #659798 !important;
